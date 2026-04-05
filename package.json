@@ -1,0 +1,35 @@
+{
+	"name": "fencing-draw-allocator",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare",
+		"test": "vitest",
+		"test:watch": "vitest --watch"
+	},
+	"dependencies": {
+		"@formkit/addons": "2.0.0",
+		"@formkit/auto-animate": "0.9.0",
+		"@formkit/icons": "2.0.0",
+		"@formkit/nuxt": "2.0.0",
+		"@formkit/themes": "2.0.0",
+		"@nuxt/test-utils": "4.0.0",
+		"@nuxtjs/tailwindcss": "6.14.0",
+		"@vueuse/nuxt": "14.2.1",
+		"array-shuffle": "4.1.0",
+		"nuxt": "4.4.2",
+		"nuxt-headlessui": "1.2.2"
+	},
+	"devDependencies": {
+		"@vue/test-utils": "2.4.6",
+		"happy-dom": "20.8.9",
+		"vitest": "4.1.2"
+	},
+	"trustedDependencies": [
+		"@parcel/watcher"
+	]
+}
