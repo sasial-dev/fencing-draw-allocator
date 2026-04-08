@@ -42,15 +42,16 @@ describe("Handles even numbers of fencers", () => {
 })
 
 describe("Handles odd numbers of fencers", () => {
-    test("Sorts 29 fencers across 6 pistes", (context) => {
-        const pistes = allocatePistes(context, 29, 6)
+    test("Sorts 33 fencers across 6 pistes", (context) => {
+        const pistes = allocatePistes(context, 33, 6)
 
-        expect(pistes).toHaveLength(4)
+        expect(pistes).toHaveLength(5)
 
         expect(pistes[0]).toHaveLength(8)
-        expect(pistes[1]).toHaveLength(8)
-        expect(pistes[2]).toHaveLength(7)
+        expect(pistes[1]).toHaveLength(7)
+        expect(pistes[2]).toHaveLength(6)
         expect(pistes[3]).toHaveLength(6)
+        expect(pistes[4]).toHaveLength(6)
     })
 
     test("Sorts 37 fencers across 6 pistes", (context) => {
@@ -79,6 +80,18 @@ test("Handles a double remainer", (context) => {
     expect(pistes[4]).toHaveLength(4)
 })
 
+test("Handles recursively running the sort function", (context) => {
+    const pistes = allocatePistes(context, 29, 6)
+
+    expect(pistes).toHaveLength(5)
+
+    expect(pistes[0]).toHaveLength(6)
+    expect(pistes[1]).toHaveLength(6)
+    expect(pistes[2]).toHaveLength(6)
+    expect(pistes[3]).toHaveLength(6)
+    expect(pistes[4]).toHaveLength(5)
+})
+
 test("Does not allocate all pistes", (context) => {
     const pistes = allocatePistes(context, 22, 6)
 
@@ -94,5 +107,5 @@ test("Does not allocate all pistes", (context) => {
 test("Does not fill over the max piste size", (context) => {
     const pistes = () => allocatePistes(context, 51, 6)
 
-    expect(pistes).toThrow()
+    expect(pistes).toThrow("Unable to sort!")
 })
